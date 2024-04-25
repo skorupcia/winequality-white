@@ -90,7 +90,7 @@ def analyze():
 
     # Obliczanie dokładności modelu
     accuracy = accuracy_score(y_test, y_pred)
-    print("\nDokładność modelu na zbiorze testowym:", accuracy)
+    print("\nDokładność modelu:", round(accuracy, 2))
 
     ##### 4 #####
     # Model regresji liniowej
@@ -108,11 +108,11 @@ def analyze():
 
     # Obliczanie błędu średniokwadratowego
     mse = mean_squared_error(y_test, y_pred_regresja)
-    print("Błąd średniokwadratowy (MSE):", mse)
+    print("Błąd średniokwadratowy (MSE):", round(mse, 2))
 
     # Ocena jakości modelu
     accuracy_regresja = accuracy_score(y_test, y_pred_regresja_rounded)
-    print("Dokładność modelu na zbiorze testowym (zaokrąglona):", accuracy_regresja)
+    print("Ocena jakości modelu (zaokrąglona):", round(accuracy_regresja, 2))
 
     ##### 5 #####
     # Model klasyfikacyjny
@@ -160,6 +160,10 @@ def analyze():
     ax.set_title('Porównanie precyzji i czułości dla klasyfikatora i regresji')
     ax.legend()
     plt.show()
+
+    #porownanie i doklany opis w raporcie
+    #ktory model sobie radzi lepiej
+    #
 
 informations()
 analyze()
